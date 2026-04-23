@@ -1,0 +1,43 @@
+@import 'tailwindcss';
+
+:root {
+  --background: oklch(0.99 0 0);
+  --foreground: oklch(0.18 0.02 260);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--foreground);
+  --border: oklch(0.89 0.01 260);
+  --muted: oklch(0.95 0.01 260);
+  --muted-foreground: oklch(0.45 0.02 260);
+  --primary: oklch(0.55 0.18 258);
+  --primary-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.6 0.22 20);
+  --destructive-foreground: oklch(0.99 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+}
+
+body { font-family: Inter, system-ui, sans-serif; }
+
+.rte-editable:empty::before {
+  content: attr(data-placeholder);
+  color: var(--color-muted-foreground);
+}
+.rte-editable h3,
+.rte-editable .h3 { font-size: 1.25rem; font-weight: 700; }
+.rte-editable strong { font-weight: 700; }
+.rte-editable em { font-style: italic; }
+.rte-editable mark { background: color-mix(in oklab, yellow 45%, transparent); }
+.rte-editable blockquote { border-left: 3px solid var(--color-border); padding-left: 0.75rem; color: var(--color-muted-foreground); }
+.rte-editable ul, .rte-editable ol { padding-left: 1.3rem; }
